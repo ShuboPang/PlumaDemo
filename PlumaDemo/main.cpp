@@ -20,9 +20,10 @@ int main()
     if (!providers.empty()){
         PluginBase* test1Plugin = providers.at(0)->create();
         // do something with myDevice
-         std::cout << test1Plugin->getDescription() << std::endl;
+
+        std::cout << providers.at(0)->getVersion()<<"  "<<test1Plugin->getDescription() << std::endl;
          // and delete it in the end
-         delete test1Plugin;
+        delete test1Plugin;
     }
     return 0;
 }
