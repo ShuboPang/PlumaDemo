@@ -81,7 +81,7 @@ const unsigned int TYPE##Provider::PLUMA_INTERFACE_LOWEST_VERSION = LowestVersio
 #define PLUMA_INHERIT_PROVIDER(SPECIALIZED_TYPE, BASE_TYPE)\
 class SPECIALIZED_TYPE##Provider: public BASE_TYPE##Provider{\
 public:\
-    BASE_TYPE * create() const{ return new SPECIALIZED_TYPE (); }\
+    BASE_TYPE * create() const{return new SPECIALIZED_TYPE ();}\
 };
 
 

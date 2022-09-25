@@ -21,9 +21,13 @@ RCC_DIR = output/temp/temp_$${suffix}
 
 SOURCES += \
         main.cpp \
-        pluginbase.cpp
+        pluginbase.cpp \
+    pluginappbase.cpp \
+    pluginmotionbase.cpp
 
 LIBS += -ldl
 
 HEADERS += \
-    pluginbase.h
+    pluginbase.h \
+    pluginappbase.h \
+    pluginmotionbase.h

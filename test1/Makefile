@@ -51,9 +51,13 @@ OBJECTS_DIR   = output/temp/temp_release/
 ####### Files
 
 SOURCES       = test1.cpp \
-		../PlumaDemo/pluginbase.cpp 
+		../PlumaDemo/pluginbase.cpp \
+		../PlumaDemo/pluginappbase.cpp \
+		../PlumaDemo/pluginmotionbase.cpp 
 OBJECTS       = output/temp/temp_release/test1.o \
-		output/temp/temp_release/pluginbase.o
+		output/temp/temp_release/pluginbase.o \
+		output/temp/temp_release/pluginappbase.o \
+		output/temp/temp_release/pluginmotionbase.o
 DIST          = ../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/common/linux.conf \
@@ -246,6 +250,8 @@ DIST          = ../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/lex.prf \
 		test1.pro test1.h \
 		../PlumaDemo/pluginbase.h \
+		../PlumaDemo/pluginappbase.h \
+		../PlumaDemo/pluginmotionbase.h \
 		/home/ubuntu/project/PlumaDemo/PlumaDemo/pluma/include/Pluma/Config.hpp \
 		/home/ubuntu/project/PlumaDemo/PlumaDemo/pluma/include/Pluma/Connector.hpp \
 		/home/ubuntu/project/PlumaDemo/PlumaDemo/pluma/include/Pluma/Dir.hpp \
@@ -255,7 +261,9 @@ DIST          = ../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/ubuntu/project/PlumaDemo/PlumaDemo/pluma/include/Pluma/Pluma.hpp \
 		/home/ubuntu/project/PlumaDemo/PlumaDemo/pluma/include/Pluma/Provider.hpp \
 		/home/ubuntu/project/PlumaDemo/PlumaDemo/pluma/include/Pluma/uce-dirent.h test1.cpp \
-		../PlumaDemo/pluginbase.cpp
+		../PlumaDemo/pluginbase.cpp \
+		../PlumaDemo/pluginappbase.cpp \
+		../PlumaDemo/pluginmotionbase.cpp
 QMAKE_TARGET  = test1
 DESTDIR       = output/bin_release/
 TARGET        = libtest1.so.1.0.0
@@ -734,11 +742,13 @@ output/temp/temp_release/test1.o: test1.cpp test1.h \
 		../PlumaDemo/pluma/include/Pluma/PluginManager.hpp \
 		../PlumaDemo/pluma/include/Pluma/Host.hpp \
 		../PlumaDemo/pluma/include/Pluma/Pluma.inl \
-		pluginbase.h \
+		../PlumaDemo/pluginappbase.h \
+		../PlumaDemo/pluginbase.h \
+		../PlumaDemo/pluginmotionbase.h \
 		../PlumaDemo/pluma/include/Pluma/Connector.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o output/temp/temp_release/test1.o test1.cpp
 
-output/temp/temp_release/pluginbase.o: ../PlumaDemo/pluginbase.cpp pluginbase.h \
+output/temp/temp_release/pluginbase.o: ../PlumaDemo/pluginbase.cpp ../PlumaDemo/pluginbase.h \
 		../PlumaDemo/pluma/include/Pluma/Pluma.hpp \
 		../PlumaDemo/pluma/include/Pluma/Config.hpp \
 		../PlumaDemo/pluma/include/Pluma/Provider.hpp \
@@ -746,6 +756,26 @@ output/temp/temp_release/pluginbase.o: ../PlumaDemo/pluginbase.cpp pluginbase.h 
 		../PlumaDemo/pluma/include/Pluma/Host.hpp \
 		../PlumaDemo/pluma/include/Pluma/Pluma.inl
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o output/temp/temp_release/pluginbase.o ../PlumaDemo/pluginbase.cpp
+
+output/temp/temp_release/pluginappbase.o: ../PlumaDemo/pluginappbase.cpp ../PlumaDemo/pluginappbase.h \
+		../PlumaDemo/pluginbase.h \
+		../PlumaDemo/pluma/include/Pluma/Pluma.hpp \
+		../PlumaDemo/pluma/include/Pluma/Config.hpp \
+		../PlumaDemo/pluma/include/Pluma/Provider.hpp \
+		../PlumaDemo/pluma/include/Pluma/PluginManager.hpp \
+		../PlumaDemo/pluma/include/Pluma/Host.hpp \
+		../PlumaDemo/pluma/include/Pluma/Pluma.inl
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o output/temp/temp_release/pluginappbase.o ../PlumaDemo/pluginappbase.cpp
+
+output/temp/temp_release/pluginmotionbase.o: ../PlumaDemo/pluginmotionbase.cpp ../PlumaDemo/pluginmotionbase.h \
+		../PlumaDemo/pluginbase.h \
+		../PlumaDemo/pluma/include/Pluma/Pluma.hpp \
+		../PlumaDemo/pluma/include/Pluma/Config.hpp \
+		../PlumaDemo/pluma/include/Pluma/Provider.hpp \
+		../PlumaDemo/pluma/include/Pluma/PluginManager.hpp \
+		../PlumaDemo/pluma/include/Pluma/Host.hpp \
+		../PlumaDemo/pluma/include/Pluma/Pluma.inl
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o output/temp/temp_release/pluginmotionbase.o ../PlumaDemo/pluginmotionbase.cpp
 
 ####### Install
 

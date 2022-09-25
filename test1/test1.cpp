@@ -7,3 +7,13 @@ bool connect(pluma::Host& host){
     host.add( new Test1Provider() );
     return true;
 }
+
+//Test1::Test1()
+//{
+
+//}
+
+Test1::~Test1()
+{
+
+}

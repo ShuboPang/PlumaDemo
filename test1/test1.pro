@@ -38,11 +38,15 @@ RCC_DIR = output/temp/temp_$${suffix}
 
 SOURCES += \
         test1.cpp \
-    ../PlumaDemo/pluginbase.cpp
+    ../PlumaDemo/pluginbase.cpp\
+../PlumaDemo/pluginappbase.cpp \
+../PlumaDemo/pluginmotionbase.cpp
 
 HEADERS += \
         test1.h \
-    ../PlumaDemo/pluginbase.h
+    ../PlumaDemo/pluginbase.h \
+../PlumaDemo/pluginappbase.h \
+../PlumaDemo/pluginmotionbase.h
 
 include(../PlumaDemo/pluma/pluma.pri)
 INCLUDEPATH += ../PlumaDemo/
